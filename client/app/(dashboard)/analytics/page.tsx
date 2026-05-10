@@ -87,12 +87,12 @@ export default function AnalyticsPage() {
           ) : (
             <ResponsiveContainer width="100%" height={200}>
               <PieChart>
-                <Pie data={topTags} dataKey="count" nameKey="tag" cx="50%" cy="50%" outerRadius={80} label={({ tag }) => tag}>
-                  {topTags.map((_: any, i: number) => (
+                <Pie data={topTags} dataKey="count" nameKey="tag" cx="50%" cy="50%" outerRadius={80}>
+                  {topTags.map((t: { tag: string }, i: number) => (
                     <Cell key={i} fill={COLORS[i % COLORS.length]} />
                   ))}
                 </Pie>
-                <Tooltip formatter={(val, name, props) => [val, props.payload.tag]} />
+                <Tooltip formatter={(val, _name, props) => [val, (props.payload as { tag?: string })?.tag]} />
               </PieChart>
             </ResponsiveContainer>
           )}

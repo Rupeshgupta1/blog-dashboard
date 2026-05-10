@@ -16,7 +16,10 @@ export default function LoginPage() {
 
   useEffect(() => {
     const hasLoggedInBefore = localStorage.getItem('hasLoggedInBefore');
-    if (hasLoggedInBefore) setIsReturning(true);
+    if (hasLoggedInBefore) {
+      // Avoid setting state directly inside the effect for lint stability
+      requestAnimationFrame(() => setIsReturning(true));
+    }
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -28,8 +31,9 @@ export default function LoginPage() {
       setAuth(data.data.user, data.data.token);
       localStorage.setItem('hasLoggedInBefore', 'true');
       router.push('/blogs');
-    } catch (err: any) {
-      setError(err.response?.data?.message || 'Login failed');
+    } catch (err) {
+      const message = (err as unknown as { response?: { data?: { message?: string } } }).response?.data?.message;
+      setError(message || 'Login failed');
     } finally {
       setLoading(false);
     }
