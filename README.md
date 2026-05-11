@@ -55,21 +55,21 @@ A full-stack blog management dashboard built with Next.js, Node.js, Express, and
 ---
 
 ## Project Structure
-blog-dashboard/
-â”œâ”€â”€ client/
-â”‚   â”œâ”€â”€ app/
-â”‚   â”‚   â”œâ”€â”€ (auth)/
-â”‚   â”‚   â””â”€â”€ (dashboard)/
-â”‚   â”œâ”€â”€ store/
-â”‚   â”œâ”€â”€ hooks/
-â”‚   â””â”€â”€ lib/
-â””â”€â”€ server/
-â”œâ”€â”€ controllers/
-â”œâ”€â”€ models/
-â”œâ”€â”€ routes/
-â”œâ”€â”€ middleware/
-â””â”€â”€ config/
 
+blog-dashboard/
+├── client/ # Next.js Frontend
+│ ├── app/
+│ │ ├── (auth)/ # Login, Signup
+│ │ └── (dashboard)/ # Blogs, Analytics, Settings
+│ ├── store/ # Zustand stores (auth, blog, UI)
+│ ├── hooks/ # useDebounce custom hook
+│ └── lib/ # Axios API instance
+└── server/ # Express Backend
+├── controllers/ # Business logic
+├── models/ # Mongoose schemas
+├── routes/ # API route handlers
+├── middleware/ # JWT auth, error handler
+└── config/ # Database connection 
 ---
 
 ## Getting Started
@@ -138,3 +138,4 @@ JWT_SECRET=your_jwt_secret
 2. Top Tags â€” $unwind tags, $group, $sort, $limit 10
 3. Last 7 Days â€” $match date range, $group by date
 4. Summary Stats â€” total blogs, authors, recent activity
+
