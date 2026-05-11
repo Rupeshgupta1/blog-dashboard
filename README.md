@@ -1,4 +1,4 @@
-# Blog Dashboard
+﻿# Blog Dashboard
 
 A full-stack blog management dashboard built with Next.js, Node.js, Express, and MongoDB.
 
@@ -24,14 +24,14 @@ A full-stack blog management dashboard built with Next.js, Node.js, Express, and
 
 ## Features
 
-- JWT authentication — signup, login, protected routes
-- Blog CRUD — create, edit, delete with confirmation dialog
-- Pagination — 6 blogs per page
+- JWT authentication â€” signup, login, protected routes
+- Blog CRUD â€” create, edit, delete with confirmation dialog
+- Pagination â€” 6 blogs per page
 - Real-time search by title with 500ms debounce
 - Tag-based filtering
-- Analytics dashboard — bar, pie, and line charts
+- Analytics dashboard â€” bar, pie, and line charts
 - 4 MongoDB aggregation pipelines
-- Fully responsive — mobile, tablet, desktop
+- Fully responsive â€” mobile, tablet, desktop
 - Dark mode toggle
 - Collapsible mobile sidebar
 - Settings page
@@ -56,19 +56,19 @@ A full-stack blog management dashboard built with Next.js, Node.js, Express, and
 
 ## Project Structure
 blog-dashboard/
-├── client/
-│   ├── app/
-│   │   ├── (auth)/
-│   │   └── (dashboard)/
-│   ├── store/
-│   ├── hooks/
-│   └── lib/
-└── server/
-├── controllers/
-├── models/
-├── routes/
-├── middleware/
-└── config/
+â”œâ”€â”€ client/
+â”‚   â”œâ”€â”€ app/
+â”‚   â”‚   â”œâ”€â”€ (auth)/
+â”‚   â”‚   â””â”€â”€ (dashboard)/
+â”‚   â”œâ”€â”€ store/
+â”‚   â”œâ”€â”€ hooks/
+â”‚   â””â”€â”€ lib/
+â””â”€â”€ server/
+â”œâ”€â”€ controllers/
+â”œâ”€â”€ models/
+â”œâ”€â”€ routes/
+â”œâ”€â”€ middleware/
+â””â”€â”€ config/
 
 ---
 
@@ -134,7 +134,7 @@ JWT_SECRET=your_jwt_secret
 
 ## Aggregation Pipelines
 
-1. Blogs per Author — $group by authorName, sorted by count
-2. Top Tags — $unwind tags, $group, $sort, $limit 10
-3. Last 7 Days — $match date range, $group by date
-4. Summary Stats — total blogs, authors, recent activity
+1. Blogs per Author â€” $group by authorName, sorted by count
+2. Top Tags â€” $unwind tags, $group, $sort, $limit 10
+3. Last 7 Days â€” $match date range, $group by date
+4. Summary Stats â€” total blogs, authors, recent activity
