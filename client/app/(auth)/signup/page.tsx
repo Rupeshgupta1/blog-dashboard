@@ -20,7 +20,7 @@ export default function SignupPage() {
     try {
       const { data } = await api.post('/auth/signup', form);
       setAuth(data.data.user, data.data.token);
-      router.push('/dashboard');
+      router.push('/blogs');
     } catch (err) {
       const message = (err as unknown as { response?: { data?: { message?: string } } }).response?.data?.message;
       setError(message || 'Signup failed');
